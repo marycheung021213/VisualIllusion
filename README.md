@@ -8,6 +8,7 @@ Here is the repository for the source code.
 ![Group 1](https://github.com/marycheung021213/VisualIllusion/assets/106864918/fe2f3ff5-0296-406e-a626-2a8c19453e84)
 
 ## Project Page
+https://hellojiaqi.com/pages/projects/project11.html
 
 ## Demo Video
 https://youtu.be/w6h8ZHt1Gig
