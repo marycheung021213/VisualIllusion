@@ -4,11 +4,11 @@ import java.util.*;
 int mX=40, mY=40; // bleeding
 int btnWidth=120, btnHeight=40, btnGap=40; // button size
 
-int maxGrid=480, minGrid=15;
+int maxGrid=480, minGrid=15; // rect size
 int grid=maxGrid;
-float[] directionsDefault={-1, -1, 1, -1, -1, 1, 1, 1};
+float[] directionsDefault={-1, -1, 1, -1, -1, 1, 1, 1}; // rotating directions
 float[] directionsUsed=directionsDefault;
-color blackAndWhite[]={color(245, 245, 245), color(245, 245, 245), color(245, 245, 245), color(245, 245, 245)};
+color blackAndWhite[]={color(245, 245, 245), color(245, 245, 245), color(245, 245, 245), color(245, 245, 245)}; // rect color
 color bayerFilter[]={color(0, 255, 0), color(255, 0, 0), color(0, 0, 255), color(0, 255, 0)};
 color[] colorsUsed=blackAndWhite;
 float angle;
@@ -68,9 +68,10 @@ class RotatePattern{
   float speedArg=1;
   float scaleArg=2;
   
+  // start rotating
   public void startRotate(){
     if(scaleFlag){
-      angle+=speedArg*1;
+      angle+=speedArg;
       if(angle>=180){
         grid/=scaleArg;
         if(grid<minGrid){
@@ -92,6 +93,7 @@ class RotatePattern{
     }
   }
   
+  // arrange rects' positions and directions
   public void rotateRects(){
     for(int x=mX+grid; x<=width-mX; x+=grid*2){
       for(int y=mY+grid; y<=height-mY-btnHeight-btnGap; y+=grid*2){
@@ -114,6 +116,7 @@ class RotatePattern{
     }
   }
   
+  // rotate a rect
   private void rotateRect(float translateX, float translateY, float rotateXAngle, float rotateYAngle, boolean XFirst){
     push();
     translate(translateX, translateY);
